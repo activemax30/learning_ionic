@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+        <ion-back-button defaultHref="/"></ion-back-button>
+      </ion-buttons>
+    <ion-title>curency</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-segment (ionChange)="segmentChanged($event)" value="buy">
+        <ion-segment-button value="buy">
+          <ion-label>Покупка</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="sale">
+          <ion-label>Продажа</ion-label>
+        </ion-segment-button>
+    </ion-segment>
+    
+    <ion-list>
+        <ion-item *ngFor="let item of fileData">
+          {{item['ccy']}}: {{item[type]}} {{item['base_ccy']}}
+        </ion-item>
+    </ion-list>
+
+</ion-content>

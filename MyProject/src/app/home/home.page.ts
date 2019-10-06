@@ -21,12 +21,11 @@ export class HomePage {
     this.newTodo = '';
     console.log('todos: ', this.todos);
   }
+  openPage() {
+    this.router.navigateByUrl('/details');
+  }
+  getCurrency() {
     
-
-   
-
-    openPage() {
-      this.router.navigateByUrl('/details');
-    }
+  }
 
 }

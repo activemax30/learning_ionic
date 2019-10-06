@@ -10,6 +10,7 @@ const routes: Routes = [
   { path: 'map', loadChildren: './pages/task/map/map.module#MapPageModule' },
   { path: 'about', loadChildren: './pages/task/about/about.module#AboutPageModule' },
   { path: 'oahu', loadChildren: './pages/task/map/oahu/oahu.module#OahuPageModule' },
+  { path: 'curency', loadChildren: './pages/curency/curency.module#CurencyPageModule' },
 ];
 
 @NgModule({
