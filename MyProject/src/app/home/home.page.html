@@ -8,7 +8,21 @@
 
 <ion-content>
   <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
+
+    <ion-input type="text" [(ngModel)]="newTodo" placeholder="add new Todo"></ion-input>
+    <ion-button (click)="addTodo()" expand="block">Add Todo</ion-button>
+
+    <ion-list>
+      <ion-item *ngFor="let todo of todos">
+        {{ todo }}
+      </ion-item>
+    </ion-list>
+
+
+    <p>{{myVar}}</p>
+    <ion-button (click)="openPage()" expand="block">Open page</ion-button>
+    <ion-button routerLink="/details" expand="block">Open page with Router</ion-button>
+    <ion-button routerLink="/task" expand="block">Task with tabs</ion-button>
+
   </div>
 </ion-content>
