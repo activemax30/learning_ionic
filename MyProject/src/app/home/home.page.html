@@ -9,6 +9,11 @@
 <ion-content>
   <div class="ion-padding">
 
+    <ion-button size="small" shape="round" color="medium" (click)="showPopover()">
+      <ion-icon name="notifications"></ion-icon>
+      <ion-badge color="dark" slot="end">3</ion-badge>
+    </ion-button>
+
     <ion-input type="text" [(ngModel)]="newTodo" placeholder="add new Todo"></ion-input>
     <ion-button (click)="addTodo()" expand="block">Add Todo</ion-button>
 
@@ -24,6 +29,10 @@
     <ion-button routerLink="/details" expand="block">Open page with Router</ion-button>
     <ion-button routerLink="/task" expand="block">Task with tabs</ion-button>
     <ion-button routerLink="/curency" expand="block">Curency</ion-button>
-
+    <div class="massage">
+      <ion-textarea  id="textarea" placeholder="Enter more information here..." auto-grow ="true" rows="1"></ion-textarea>
+      <!-- <textarea name="" id="textarea" (keydown)="autogrow($event)" placeholder="Enter your massage"></textarea> -->
+      <button>SEND</button>
+    </div>
   </div>
 </ion-content>

@@ -4,6 +4,8 @@ import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { PopoverComponent } from '../components/popover/popover.component';
+
 
 import { HomePage } from './home.page';
 
@@ -20,6 +22,7 @@ import { HomePage } from './home.page';
       }
     ])
   ],
-  declarations: [HomePage]
+  declarations: [HomePage, PopoverComponent],
+  entryComponents: [PopoverComponent]
 })
 export class HomePageModule {}

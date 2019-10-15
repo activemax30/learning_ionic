@@ -8,7 +8,10 @@
 </ion-header>
 
 <ion-content>
-  <ion-card>
+  <ion-card class="my-card"
+            [@cardAnimator]="animationState"
+            (@cardAnimator.done)="resetAnimationState()"
+            (swipeleft)="startAnimation('slideOutLeft')">
     <img src="https://media.timeout.com/images/105223328/630/472/image.jpg" alt="oahu">
     <ion-card-header>
       <ion-card-subtitle>Location</ion-card-subtitle>
@@ -18,5 +21,8 @@
         Known as “The Gathering Place,” Oahu is home to the largest population of people as well as the best nightlife in Hawaii. 
         The Honolulu craft beer and food scene here is dynamic and always changing. 
     </ion-card-content>
+
+    <ion-button (tap)="startAnimation('swing')">swing</ion-button>
+
   </ion-card>
 </ion-content>

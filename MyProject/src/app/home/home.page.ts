@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { PopoverController } from '@ionic/angular';
+import { PopoverComponent } from '../components/popover/popover.component';
 
 
 @Component({
@@ -8,11 +10,22 @@ import { Router } from '@angular/router';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+
+  async showPopover(ev: any) {
+    const popover = await this.popoverController.create({
+        component: PopoverComponent,
+        event: ev,
+        animated: true,
+        showBackdrop: true
+    });
+    return await popover.present();
+}
+
   myVar = 'Hello darkness my old friend';
   todos = ['Buy Milk', 'Learn Ionic'];
   newTodo = '';
 
-  constructor(private router: Router) {
+  constructor(private router: Router, public popoverController: PopoverController) {
     
   }
 
@@ -27,5 +40,8 @@ export class HomePage {
   getCurrency() {
     
   }
+  autogrow(e){
+    e.target.style.height = "0px";
+    e.target.style.height = (e.target.scrollHeight)+"px";  }
 
 }
